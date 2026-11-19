@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Excelsior Educate | Pathways to Success</title>
+<meta name="description" content="Excelsior Educate helps schools build alternative pathways to graduation that engage, include, and graduate every student. Home of the Pathways to Success program and the Applied Middle framework.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.webp">
+<style>
+:root{
+  --font-display:'Zodiak', 'Georgia', serif;
+  --font-body:'Satoshi', 'Helvetica Neue', sans-serif;
+  --text-xs:clamp(.75rem,.72rem + .15vw,.8125rem);
+  --text-sm:clamp(.875rem,.85rem + .12vw,.9375rem);
+  --text-base:clamp(1rem,.97rem + .15vw,1.0625rem);
+  --text-lg:clamp(1.125rem,1.05rem + .35vw,1.375rem);
+  --text-xl:clamp(1.5rem,1.25rem + 1.1vw,2.25rem);
+  --text-2xl:clamp(2rem,1.4rem + 2.6vw,3.5rem);
+  --text-hero:clamp(2.6rem,1.6rem + 4.4vw,5.25rem);
+  --cream:#f7f2ea; --paper:#fffdf9; --sand:#ece3d4;
+  --ink:#24211d; --ink-2:#5a534a; --line:#d9cfbf;
+  --rock:#a8482c; --rock-dk:#86361f; --sage:#5d6b52; --sage-dk:#3f4a37;
+  --gold:#d79a4a;
+  --radius:6px;
+  --wrap:min(1180px, 100% - 2.5rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-body);font-size:var(--text-base);line-height:1.65;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{width:var(--wrap);margin-inline:auto}
+.eyebrow{font-size:var(--text-xs);letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--rock)}
+h1,h2{font-family:var(--font-display);font-weight:500;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:var(--text-2xl);margin:.4rem 0 1.1rem;max-width:20ch}
+h3{font-size:var(--text-lg);font-weight:700;line-height:1.3;margin-bottom:.4rem}
+p{max-width:65ch}
+.lede{font-size:var(--text-lg);color:var(--ink-2);line-height:1.55}
+section{padding-block:clamp(4rem,9vw,7.5rem)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-size:var(--text-sm);font-weight:700;text-decoration:none;padding:.85rem 1.4rem;border-radius:999px;transition:background .2s,color .2s,border-color .2s}
+.btn-primary{background:var(--rock);color:#fff}
+.btn-primary:hover{background:var(--rock-dk)}
+.btn-ghost{border:1.5px solid currentColor}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* draft ribbon */
+.draft{background:var(--sage-dk);color:#efe9dd;font-size:var(--text-xs);text-align:center;padding:.45rem 1rem;letter-spacing:.04em}
+
+/* nav */
+header.site{position:sticky;top:0;z-index:20;background:rgba(247,242,234,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:var(--font-display);font-size:1.35rem;font-weight:500;text-decoration:none;letter-spacing:-.01em}
+.brand span{color:var(--rock)}
+.nav ul{display:flex;gap:1.75rem;list-style:none;font-size:var(--text-sm);font-weight:500}
+.nav ul a{text-decoration:none;color:var(--ink-2)}
+.nav ul a:hover{color:var(--ink)}
+.nav .btn{padding:.6rem 1.1rem}
+.menu-btn{display:none;background:none;border:0;font:inherit;font-weight:700;font-size:var(--text-sm);cursor:pointer;color:var(--ink)}
+
+/* hero */
+.hero{position:relative;min-height:min(86vh,820px);display:flex;align-items:flex-end;color:#fff;padding:0}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(25,18,12,.15) 0%,rgba(25,18,12,.35) 45%,rgba(25,18,12,.82) 100%)}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(3rem,8vw,6rem)}
+.hero .eyebrow{color:#f3c88f}
+.hero h1{font-size:var(--text-hero);max-width:14ch;margin:.6rem 0 1.25rem}
+.hero p{font-size:var(--text-lg);max-width:46ch;color:#f1ebe2}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+
+/* problem */
+.problem{background:var(--paper)}
+.split{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.stat{background:var(--paper);padding:1.6rem 1.4rem}
+.stat b{display:block;font-family:var(--font-display);font-weight:500;font-size:var(--text-xl);color:var(--rock);line-height:1.1;margin-bottom:.35rem}
+.stat span{font-size:var(--text-sm);color:var(--ink-2)}
+.note{font-size:var(--text-xs);color:var(--ink-2);margin-top:.8rem}
+.pull{font-family:var(--font-display);font-size:var(--text-xl);line-height:1.25;border-left:3px solid var(--rock);padding-left:1.25rem;margin-top:2rem;max-width:26ch}
+
+/* framework */
+.framework{background:var(--sage-dk);color:#f2ede4}
+.framework .eyebrow{color:#e8b77a}
+.framework .lede{color:#d9d3c6}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem;counter-reset:s}
+.step{border-top:2px solid #e8b77a;padding-top:1.4rem;position:relative}
+.step .num{font-family:var(--font-display);font-size:var(--text-xl);color:#e8b77a;line-height:1}
+.step h3{font-family:var(--font-display);font-weight:500;font-size:var(--text-xl);margin:.6rem 0 .2rem}
+.step .verbs{font-size:var(--text-xs);letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#c9c2b3;margin-bottom:.8rem}
+.step p{color:#ddd7ca;font-size:var(--text-sm)}
+.principle{margin-top:3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.18);border-radius:var(--radius);overflow:hidden}
+.principle div{background:var(--sage);padding:1.6rem}
+.principle b{font-family:var(--font-display);font-size:var(--text-xl);font-weight:500;display:block}
+.principle span{font-size:var(--text-sm);color:#e7e1d5}
+
+/* program */
+.program .split{align-items:center}
+.photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3}
+.photo img{width:100%;height:100%;object-fit:cover}
+.evidence{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem}
+.card .tag{font-size:var(--text-xs);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+.card h3{margin-top:.5rem}
+.card p{font-size:var(--text-sm);color:var(--ink-2)}
+.fit{margin-top:2.5rem;padding:1.6rem 1.8rem;background:var(--sand);border-radius:var(--radius)}
+.fit h3{margin-bottom:.3rem}
+.fit p{font-size:var(--text-sm);color:var(--ink-2);max-width:none}
+
+/* bridge */
+.bridge{background:var(--paper)}
+.bridge-list{list-style:none;margin-top:2rem;display:grid;gap:0}
+.bridge-list li{display:grid;grid-template-columns:3rem 1fr;gap:1rem;padding:1.15rem 0;border-top:1px solid var(--line)}
+.bridge-list li:last-child{border-bottom:1px solid var(--line)}
+.bridge-list .n{font-family:var(--font-display);font-size:var(--text-xl);color:var(--rock);line-height:1}
+.bridge-list b{display:block;font-size:var(--text-base)}
+.bridge-list span{font-size:var(--text-sm);color:var(--ink-2)}
+
+/* services */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem}
+.svc{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:2rem;display:flex;flex-direction:column}
+.svc .who{font-size:var(--text-xs);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rock);margin-bottom:.6rem}
+.svc h3{font-family:var(--font-display);font-weight:500;font-size:var(--text-xl);margin-bottom:.6rem}
+.svc p{font-size:var(--text-sm);color:var(--ink-2)}
+.svc ul{margin:1rem 0 0 1.1rem;font-size:var(--text-sm);color:var(--ink-2)}
+.svc li{margin-bottom:.3rem}
+
+/* story */
+.story{background:var(--sand)}
+.timeline{margin-top:2rem;border-left:2px solid var(--rock);padding-left:1.5rem;display:grid;gap:1.6rem}
+.timeline div{position:relative}
+.timeline div::before{content:"";position:absolute;left:calc(-1.5rem - 7px);top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--rock)}
+.timeline b{font-family:var(--font-display);font-weight:500;font-size:var(--text-lg);display:block}
+.timeline span{font-size:var(--text-sm);color:var(--ink-2)}
+.quote{font-family:var(--font-display);font-size:var(--text-xl);line-height:1.3;margin-top:2.5rem;max-width:30ch}
+.quote small{display:block;font-family:var(--font-body);font-size:var(--text-sm);color:var(--ink-2);margin-top:.8rem}
+
+/* workshops */
+.workshops .split{align-items:center}
+.talks{display:grid;gap:1rem;margin-top:1.75rem}
+.talk{border-left:3px solid var(--sage);padding:.2rem 0 .2rem 1.1rem}
+.talk b{display:block}
+.talk span{font-size:var(--text-sm);color:var(--ink-2)}
+
+/* contact */
+.contact{background:var(--ink);color:#f1ece3}
+.contact .eyebrow{color:#e8b77a}
+.contact .lede{color:#cfc8bb}
+.contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+form{display:grid;gap:1rem;background:#2f2b26;padding:2rem;border-radius:var(--radius)}
+label{font-size:var(--text-sm);font-weight:500;display:grid;gap:.35rem}
+input,select,textarea{font:inherit;font-size:var(--text-base);padding:.75rem .9rem;border-radius:4px;border:1px solid #5a534a;background:#24211d;color:#f1ece3}
+textarea{min-height:120px;resize:vertical}
+.form-note{font-size:var(--text-xs);color:#a9a194}
+footer{background:#1c1a17;color:#a9a194;font-size:var(--text-xs);padding:2rem 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+
+@media (max-width:900px){
+  .split,.contact-grid{grid-template-columns:1fr}
+  .steps,.evidence{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .nav ul{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--cream);border-bottom:1px solid var(--line);padding:.5rem 1.25rem 1rem}
+  .nav ul.open{display:flex}
+  .nav ul li a{display:block;padding:.7rem 0}
+  .nav .btn{display:none}
+  .menu-btn{display:block}
+}
+@media (max-width:520px){
+  .stats,.principle{grid-template-columns:1fr}
+  .hero{min-height:88vh}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="draft">Draft site for review by Gretchen and Ken. Content and images are placeholders until approved.</div>
+
+<header class="site">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="#top">Excelsior <span>Educate</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="navlist">Menu</button>
+    <ul id="navlist">
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#program">Pathways to Success</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#workshops">Workshops</a></li>
+    </ul>
+    <a class="btn btn-primary" href="#contact">Start a conversation</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-h">
+    <img src="img/hero.webp" alt="Sunrise over red sandstone mesas in western Colorado, with a path winding up past a school campus" width="1800" height="1012">
+    <div class="wrap">
+      <p class="eyebrow">Excelsior: ever upward</p>
+      <h1 id="hero-h">Different pathways. Not lower expectations.</h1>
+      <p>Excelsior Educate helps schools build alternative pathways to graduation that engage, include, and graduate every student, with learning that leads to a real next step.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#program">Explore Pathways to Success</a>
+        <a class="btn btn-ghost" href="#contact">Bring us to your school</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="problem" id="approach" aria-labelledby="why-h">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Why this matters</p>
+        <h2 id="why-h">Students aren't rejecting education. They're rejecting what feels disconnected.</h2>
+        <p class="lede">Long before COVID, students were disengaging. Many didn't see how school connected to their future, so they chose online programs, entered the workforce without a diploma or a plan, or left school entirely.</p>
+        <p style="margin-top:1rem">Being present isn't the same as being engaged. When content coverage outweighs relevance and application, learning loses its impact. Careers ask for knowledge that is integrated, applied, communicated, adapted, and supported by technology. Our work builds that bridge.</p>
+        <p class="pull">Access opens the door. Outcomes show students are ready.</p>
+      </div>
+      <div>
+        <div class="stats">
+          <div class="stat"><b>10–16%</b><span>Chronic absenteeism nationally before COVID</span></div>
+          <div class="stat"><b>28–30%</b><span>Chronic absenteeism in 2021–22, nearly double</span></div>
+          <div class="stat"><b>Multiple</b><span>Causes of disengagement. No single fix solves it</span></div>
+          <div class="stat"><b>Every</b><span>Student deserves a meaningful target they can reach</span></div>
+        </div>
+        <p class="note">Absenteeism figures as cited in Gretchen Haptonstall's "Beyond Credits" presentation (U.S. Dept. of Education, Attendance Works, Brookings).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="framework" aria-labelledby="fw-h">
+    <div class="wrap">
+      <p class="eyebrow">The Applied Middle</p>
+      <h2 id="fw-h">Courses are the foundation. Evidence turns learning into readiness.</h2>
+      <p class="lede">Between "I took the class" and "I'm ready for what's next" sits the Applied Middle, where students use what they've learned, explain it, and connect it to their own future.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">01</div>
+          <h3>Foundation</h3>
+          <p class="verbs">Know · Understand</p>
+          <p>Completed coursework, traditional or online classes, and prior proficiencies count. Students build on what they've already earned instead of starting over.</p>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <h3>Application</h3>
+          <p class="verbs">Use · Solve · Build</p>
+          <p>Individualized guided projects, technical writing, service learning, and work-based learning put knowledge to work, aligned to state graduation expectations.</p>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <h3>Readiness</h3>
+          <p class="verbs">Transfer · Continue</p>
+          <p>Students show what they can do, who they are, and where they're going, then own a concrete next step into training, work, or further learning.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div><b>All</b><span>Access. The same target is offered to everyone. Exposure, not yet readiness.</span></div>
+        <div><b>Every</b><span>Outcome. Each student reaches a meaningful target, and their understanding becomes usable.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="program" id="program" aria-labelledby="prog-h">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <p class="eyebrow">The Pathways to Success Program</p>
+          <h2 id="prog-h">An alternative pathway to graduation with rigor students can see.</h2>
+          <p class="lede">Pathways to Success is a project-based program for students who haven't been successful earning traditional credits and are at risk of not graduating, including students returning after leaving school.</p>
+          <p style="margin-top:1rem">There are no scripted daily lessons. Teachers get core projects, templates, and rubrics they adapt to each learner, so students can draw on past learning and strengths to demonstrate mastery across academic, cultural, personal, future, applied, and community areas of study.</p>
+        </div>
+        <div class="photo"><img src="img/presentation.webp" alt="A high school student presents her portfolio to a panel of three educators in a school library" loading="lazy" width="1100" height="733"></div>
+      </div>
+
+      <div class="evidence">
+        <div class="card">
+          <p class="tag">Capability</p>
+          <h3>ACT WorkKeys</h3>
+          <p>Nationally recognized assessments of applied math, workplace documents, and graphic literacy. These skills transfer to any industry and can lead to the National Career Readiness Certificate.</p>
+        </div>
+        <div class="card">
+          <p class="tag">Identity</p>
+          <h3>Portfolio</h3>
+          <p>Artifacts, writing, and reflections gathered over time. Students leave with a physical portfolio that shows how far they've come, reviewed by teachers, administrators, and counselors.</p>
+        </div>
+        <div class="card">
+          <p class="tag">Direction</p>
+          <h3>Presentation</h3>
+          <p>Students practice interviewing, then present to building and community panels about their past, present, and future: learning explained, future researched, next step owned.</p>
+        </div>
+      </div>
+
+      <div class="fit">
+        <h3>Built to fit your system</h3>
+        <p>Pathways to Success works alongside CTE, concurrent enrollment, career centers, trades training, work-based learning, and flexible schedules. It includes checks and balances for accountability, administrator and counselor roles, and transcript options so students can transfer back to a traditional pathway if needed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bridge" aria-labelledby="bridge-h">
+    <div class="wrap split">
+      <div class="photo"><img src="img/planning.webp" alt="A teacher and student work through a printed planning worksheet together at a wooden table" loading="lazy" width="1100" height="733"></div>
+      <div>
+        <p class="eyebrow">Find the Fit, Build the Bridge</p>
+        <h2 id="bridge-h">One student. One useful connection.</h2>
+        <p>Our practitioner toolbox walks educators through planning with a real student. The route can vary, but expectations for learning, evidence, and readiness stay clear.</p>
+        <ol class="bridge-list">
+          <li><span class="n">1</span><div><b>Notice the student</b><span>Start with strengths, interests, responsibilities, and support needs.</span></div></li>
+          <li><span class="n">2</span><div><b>Explore the fit</b><span>Compare plausible ways forward. A useful next step doesn't require a final career choice.</span></div></li>
+          <li><span class="n">3</span><div><b>Find the connection</b><span>Identify the one missing link between what a student has and a meaningful next step.</span></div></li>
+          <li><span class="n">4</span><div><b>Build one bridge</b><span>Name the first step, lead, partner, and one sign of progress.</span></div></li>
+          <li><span class="n">5</span><div><b>Return and review</b><span>Check the fit with the student, gather evidence, and adjust the route.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services" aria-labelledby="svc-h">
+    <div class="wrap">
+      <p class="eyebrow">How we work with schools</p>
+      <h2 id="svc-h">Support that meets you where your program is.</h2>
+      <div class="services-grid">
+        <article class="svc">
+          <p class="who">Districts and high schools</p>
+          <h3>Program licensing</h3>
+          <p>Site licenses for the Pathways to Success curriculum, including framework, letter of study, guided projects, templates, and rubrics, with optional updates as state requirements change.</p>
+        </article>
+        <article class="svc">
+          <p class="who">Teachers, administrators, counselors</p>
+          <h3>Professional learning</h3>
+          <p>Training for new and experienced pathway teachers and for the administrators and counselors who review portfolios and sit on presentation panels.</p>
+          <ul><li>New-teacher onboarding</li><li>Experienced-teacher refreshers</li><li>Administrator and counselor sessions</li></ul>
+        </article>
+        <article class="svc">
+          <p class="who">Leadership teams</p>
+          <h3>Pathway review and design</h3>
+          <p>A structured look at your existing alternative or credit-recovery options: where students get stuck, what evidence counts, and how to strengthen the Applied Middle.</p>
+        </article>
+        <article class="svc">
+          <p class="who">Conferences and in-service days</p>
+          <h3>Workshops and keynotes</h3>
+          <p>Interactive sessions that leave participants with tools they can use with a real student the next week.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="story" aria-labelledby="story-h">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Our story</p>
+        <h2 id="story-h">Built in classrooms, over two decades, with students who needed another way.</h2>
+        <p>Excelsior Educate was founded by Gretchen Haptonstall, a Colorado high school interventionist and alternative-pathway teacher, with Dr. Ken Haptonstall. Gretchen's work grew from a simple belief: a different pathway should never mean lower expectations.</p>
+        <p class="quote">"Different pathway does not equal lower expectations."<small>Gretchen Haptonstall, Founder</small></p>
+      </div>
+      <div class="timeline">
+        <div><b>2005</b><span>A structured dropout-prevention diploma pathway launches, built on content areas, WorkKeys tests, and a final presentation.</span></div>
+        <div><b>Listen</b><span>Gretchen works with content leaders, CTE leadership, and building and district leaders to address perceptions that the pathway was "easy."</span></div>
+        <div><b>Restructure</b><span>Academic genres, technical writing, math, technology, and service learning are added: lab reports, resumes, cover letters, research, and reflection.</span></div>
+        <div><b>Raise the evidence</b><span>Fewer tests, more applied experiences. Measure + experience + reflection = readiness.</span></div>
+        <div><b>Today</b><span>Pathways to Success and the Applied Middle framework, shared with educators across Colorado.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="workshops" id="workshops" aria-labelledby="ws-h">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Workshops</p>
+        <h2 id="ws-h">Sessions educators can use the next morning.</h2>
+        <p>Gretchen's sessions blend real student stories, table talk, and hands-on planning with practical take-home tools.</p>
+        <div class="talks">
+          <div class="talk"><b>Beyond Credits: Building Pathways that Engage, Include, and Graduate Every Student</b><span>Why students disengage, the Applied Middle, and how readiness becomes visible.</span></div>
+          <div class="talk"><b>Find the Fit, Build the Bridge</b><span>A hands-on planning session with worksheets, a worked example, and the Pathways to Success Toolbox.</span></div>
+          <div class="talk"><b>Featured: 2026 emPWR Conference</b><span>Accepted breakout session, Colorado Association for Career and Technical Education.</span></div>
+        </div>
+      </div>
+      <div class="photo"><img src="img/workshop.webp" alt="Educators talk over printed handouts at round tables during a conference breakout session" loading="lazy" width="1100" height="733"></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="ct-h">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Start a conversation</p>
+        <h2 id="ct-h">Let's build a pathway for every student.</h2>
+        <p class="lede">Tell us about your school, your students, and what you're hoping to change. We'll follow up to talk through options.</p>
+        <p style="margin-top:1.5rem"><a href="mailto:excelsioreducate@gmail.com" style="color:#f3c88f;font-weight:700">excelsioreducate@gmail.com</a><br>Grand Junction, Colorado</p>
+      </div>
+      <form id="inquiry" novalidate>
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        <label>School or district<input name="org" autocomplete="organization"></label>
+        <label>I'm interested in
+          <select name="topic">
+            <option>Pathways to Success licensing</option>
+            <option>Professional learning</option>
+            <option>Pathway review and design</option>
+            <option>A workshop or keynote</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label>Message<textarea name="msg"></textarea></label>
+        <button class="btn btn-primary" type="submit" style="justify-self:start;border:0;cursor:pointer">Send inquiry</button>
+        <p class="form-note" id="form-note">This opens your email app with your message ready to send.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Excelsior Educate, LLC · Grand Junction, Colorado</span>
+    <span>Pathways to Success and the Applied Middle are programs of Excelsior Educate.</span>
+  </div>
+</footer>
+
+<script>
+const btn=document.querySelector('.menu-btn'),list=document.getElementById('navlist');
+btn.addEventListener('click',()=>{const o=list.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+list.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{list.classList.remove('open');btn.setAttribute('aria-expanded','false')}));
+document.getElementById('inquiry').addEventListener('submit',e=>{
+  e.preventDefault();const f=e.target,note=document.getElementById('form-note');
+  if(!f.name.value.trim()||!f.email.checkValidity()){note.textContent='Please add your name and a valid email.';note.style.color='#f3c88f';return;}
+  const body=`Name: ${f.name.value}\nEmail: ${f.email.value}\nSchool/district: ${f.org.value}\nInterest: ${f.topic.value}\n\n${f.msg.value}`;
+  window.location.href='mailto:excelsioreducate@gmail.com?subject='+encodeURIComponent('Excelsior Educate inquiry: '+f.topic.value)+'&body='+encodeURIComponent(body);
+  note.textContent='Opening your email app...';
+});
+</script>
+</body>
+</html>
